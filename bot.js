@@ -12,8 +12,8 @@ const client = new Client({
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
 
-    // Si le message contient une mention à "James Liwis"
-    if (message.content.includes("@James Liwis")) {
+    // Vérifie si le message mentionne James Liwis (ID : 348117765762056193)
+    if (message.mentions.users.has("348117765762056193")) {
         const réponses = [
             "On ne ping pas James Liwis. On dépose une offrande et on attend qu’il vienne.",
             "Ping pas James Liwis... il te regarde déjà.",
@@ -26,14 +26,9 @@ client.on("messageCreate", (message) => {
         const réponse = réponses[Math.floor(Math.random() * réponses.length)];
 
         message.reply(réponse);
-        return;
-    }
-
-    // Commande simple : !ping
-    if (message.content === "!ping") {
-        message.reply("🏓 Pong !");
     }
 });
+
 
 
 client.login(process.env.TOKEN);
