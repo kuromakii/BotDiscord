@@ -37,3 +37,9 @@ client.on("messageCreate", (message) => {
 });
 
 client.login(process.env.TOKEN);
+
+// Empêche Koyeb de stopper le bot en écoutant un faux port
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => res.send("Bot is running!"));
+app.listen(8000, () => console.log("✅ Fake web server for Koyeb started on port 8000"));
