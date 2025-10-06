@@ -16,8 +16,13 @@ client.once("ready", () => {
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
-  // Détecte si quelqu’un te mentionne
-  if (message.mentions.users.has("348117765762056193")) {
+  const targetId = "348117765762056193"; // ton ID Discord
+
+  // Vérifie si le message mentionne l’utilisateur par ID OU texte
+  if (
+    message.mentions.users.has(targetId) || // mention classique
+    message.content.toLowerCase().includes("@kuromakii") // écrit manuellement
+  ) {
     const réponses = [
       "On ne ping pas **James Liwis**. On dépose une offrande et on attend qu’il vienne.",
       "Ping pas **James Liwis**... il te regarde déjà.",
