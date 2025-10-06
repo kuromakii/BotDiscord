@@ -9,21 +9,15 @@ const client = new Client({
   ]
 });
 
-client.once("clientReady", () => {
+client.once("ready", () => {
   console.log(`✅ Connecté en tant que ${client.user.tag}`);
 });
 
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
-  // ID de Kuromakii / James Liwis
-  const targetId = "348117765762056193";
-
-  // Vérifie si le message mentionne l’utilisateur par ID OU texte
-  if (
-    message.mentions.users.has(targetId) || // mention classique
-    message.content.toLowerCase().includes("@kuromakii") // mention tapée manuellement
-  ) {
+  // Détecte si quelqu’un te mentionne
+  if (message.mentions.users.has("348117765762056193")) {
     const réponses = [
       "On ne ping pas **James Liwis**. On dépose une offrande et on attend qu’il vienne.",
       "Ping pas **James Liwis**... il te regarde déjà.",
@@ -33,7 +27,7 @@ client.on("messageCreate", (message) => {
     ];
 
     const réponse = réponses[Math.floor(Math.random() * réponses.length)];
-    message.reply(réponse);
+    message.reply({ content: réponse, allowedMentions: { repliedUser: false } });
   }
 });
 
