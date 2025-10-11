@@ -25,13 +25,43 @@ client.on("messageCreate", (message) => {
     message.content.toLowerCase().includes("@kuromakii")
   ) {
     const réponses = [
-      "On ne ping pas **James Liwis**. On dépose une offrande et on attend qu’il vienne.",
-      "Ping pas **James Liwis**... il te regarde déjà.",
-      "Ping encore **James Liwis** et c’est lui qui te pingera… depuis ta penderie.",
-      "**James Liwis** ne répond pas aux pings. Il les hante.",
-      "Ping pas **James Liwis**… le dernier qui l’a fait tape encore 'désolé' en morse."
-    ];
+        `> 🍇 **James Liwis (Essence Marlowienne)**
+      Énergie vitale circulant dans les caves du Marlowe Vine-Yard.  
+      Invisible à l’œil nu, mais perceptible à chaque idée brillante ou verre bien servi.  
+      Présence détectable par une légère vibration du sol et un “j’ai une idée” murmuré dans l’air.` ,
 
+        `> 🥂 **James Liwis (Terme œnologique)**
+      Se dit d’un millésime rare, plein de caractère, laissant en bouche un goût de réussite et une petite note d’insomnie.  
+      > _“Ce champagne a du Liwis, ça se sent !”_`,
+
+        `> 🍾 **James Liwis (Objet professionnel non identifié)**
+      Appareil multifonction indispensable à la survie du Marlowe Vine-Yard.  
+      Fonctions :  
+      • Gestion des quotas et livraisons express  
+      • Conception d’idées absurdes mais brillantes  
+      • Réactivation du moral des troupes à chaque rush.  
+      Compatibilité : 100 % avec Max Strobeni, 0 % avec la paresse.`,
+
+        `> 💼 **James Liwis (Rang hiérarchique)**
+      Titre officiel : Co-Patron du Marlowe Vine-Yard.  
+      Mission : seconder Max Strobeni dans la gestion, les relations commerciales et la création de l’aura Marlowienne.  
+      Particularité : souvent repéré avec un verre à la main et un sourire en coin disant : “On va faire mieux que l’an dernier.”`,
+
+        `> 🧥 **James Liwis (Tenue d’exception)**
+      Scientifiquement prouvé : 90 % de sa classe provient de son existence.  
+      Il peut plier une veste sans faire un pli.  
+      Même les cintres se battent pour le porter.`,
+
+        `> 🎵 **James Liwis (Vibration Marlowe)**
+      Rythme interne du domaine.  
+      On dit que chaque bouteille possède sa propre fréquence “Liwisienne” : un léger groove qui fait bouger le client avant même qu’il goûte.  
+      Symptômes : hausse de bonne humeur et envie soudaine de chanter “Marlowe forever”.`,
+
+        `> ⚜️ **James Liwis (Légende interne du domaine)**
+      On raconte qu’il aurait vendu du jus d’orange comme s’il s’agissait d’un grand cru.  
+      Depuis, chaque employé de Marlowe Vine-Yard prononce son nom avant d’ouvrir un carton :  
+      > _“Par Max Strobeni et James Liwis, que la vigne nous bénisse !”_`
+];
     const réponse = réponses[Math.floor(Math.random() * réponses.length)];
     message.reply({
       content: réponse,
